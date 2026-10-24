@@ -1,12 +1,5 @@
 @use "../abstracts";
 
 body {
-  font-family: $font-primary;
-  font-weight: 400;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
+  font-family: abstracts.$font-primary;
 }

@@ -16,23 +16,90 @@
   </head>
 
   <body>
-    <h1 class="hidden">Hee Jin Cheon Portfolio</h1>
-    <header id="main-header" class="grid-con center-grid-con">
-      <div class="col-span-4" id="logo-con">
-        <img src="images/logo-color.svg" id="logo" />
-      </div>
-      <nav class="col-span-full" id="main-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main></main>
+    <h1 class="visually-hidden">Hee Jin Cheon Portfolio</h1>
 
-    <footer class="grid-con center-grid-con">
+      <div class="top-section box">
+
+        <header class="grid-con center-grid-con">
+
+          <div class="col-span-2" id="logo-con">
+            <img src="images/logo_main_coral.svg" id="logo" />
+          </div>
+
+          <nav id="main-nav" class="col-span-full   l-col-start-5 l-col-end-12">
+            <h2 class="visually-hidden">Main Navigation</h2>
+              <input type="checkbox" id="menu-toggle" >
+              <label for="menu-toggle" class="burger-icon">
+                <img src="images/icon_burger.svg" alt="Hamburger Menu">
+              </label>
+
+              <ul id="burger-menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PORTFOLIOS</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">CONTACT</a></li>
+
+                <li class="nav-icons-desktop image-placeholder">
+                  <a href="#"><img src="images/icon_search.svg" alt="Instagram"></a>
+                  <a href="#"><img src="images/icon_login.svg" alt="Linkedin"></a>
+                  <a href="#"><img src="images/icon_cart.svg" alt="GitHub"></a>
+                </li>
+
+                <li class="nav-qrcode image-placeholder">
+                  <img src="" alt="qrcode"></a>
+                </li>
+              </ul>  
+          </nav>  
+        </header>
+
+        <section id="hero-section" class="grid-con center-grid-con box">
+          <h2 class="visually-hidden">Portfolio site hero section</h2>
+            <div class="grid-con center-grid-con" id="hero">
+            </div>
+        </section>
+      </div>
+
+    <main>
+
+      <div class="grid-con center-grid-con" id="portfolio">
+        <h2>PORTFOLIO</h2>
+            <section class="col-span-6 image-placeholder">
+                <h3>Portfolio #1</h3>
+                <p>This is my portfolio section. </p>
+            </section>
+            <section class="col-span-6 image-placeholder">
+                <h3>Portfolio #2</h3>
+                <p>This is my portfolio section. </p>
+            </section>
+            <section class="col-span-6 image-placeholder">
+                <h3>Portfolio #3</h3>
+                <p>This is my portfolio section. </p>
+            </section>
+            <section class="col-span-6 image-placeholder">
+                <h3>Portfolio #2</h3>
+                <p>This is my portfolio section. </p>
+            </section>
+      </div>
+
+      <div class="grid-con center-grid-con box">
+        <h2>ABOUT ME</h2>
+        <section class="col-span-12 image-placeholder"></section>
+      </div>
+
+      <div class="grid-con center-grid-con box">
+        <h2 class="visually-hidden">CONTACT</h2>
+        <section class="l-col-satrt-3 l-col-end-10 image-placeholder"></section>
+
+      </div>
+
+
+
+                
+
+
+    </main>
+
+    <footer class="grid-con center-grid-con box">
       <p class="col-span-full">&copy; 2026 - Hee Jin Cheon Portfolio</p>
     </footer>
 
