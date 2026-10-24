@@ -1,4 +1,4 @@
-# Cheon Jin FIP Portfolio Project
+# Jin Cheon FIP Portfolio Project
 
 This website is the portfolio site of Hee Jin Cheon, focusing on the roles of Interactive Media Designer & Content Strategist. It connects 20 years of experience in trend forecasting and digital content creation in R&D with interactive digital media skills developed at Fanshawe College. This portfolio highlights visual communication, content planning, motion graphics, and both front-end and back-end web interactivity.
 
