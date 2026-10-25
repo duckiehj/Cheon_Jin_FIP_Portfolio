@@ -1,0 +1,10 @@
+@use "../abstracts";
+
+.top-section {
+  background-color: abstracts.$bg-color;
+}
+
+#hero video {
+  width: 100%;
+  display: block;
+}

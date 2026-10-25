@@ -11,6 +11,7 @@
     />
 
     <title>Portfolio Site - Hee Jin Cheon</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.8.4/plyr.css" />
     <link href="css/grid.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
   </head>
@@ -20,15 +21,20 @@
 
     <div id="mobile-outline" class="top-section box">
       <header class="grid-con center-grid-con">
-        <div class="col-span-2" id="logo-con">
-          <img
-            src="images/logo_main_coral.svg"
-            id="logo"
-            alt="Hee Jin Cheon Logo with flower"
-          />
+        <div class="col-span-2 m-col-span-3 l-col-span-2" id="logo-con">
+          <a href="index.html">
+            <img
+              src="images/logo_main_coral.svg"
+              id="logo"
+              alt="Hee Jin Cheon Logo with flower"
+            />
+          </a>
         </div>
 
-        <nav id="main-nav" class="col-span-full l-col-start-5 l-col-end-12">
+        <nav
+          id="main-nav"
+          class="col-span-2 m-col-start-4 m-col-end-13 l-col-start-5 l-col-end-13"
+        >
           <h2 class="visually-hidden">Main Navigation</h2>
           <input type="checkbox" id="menu-toggle" />
           <label for="menu-toggle" class="burger-icon">
@@ -36,10 +42,10 @@
           </label>
 
           <ul id="burger-menu">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">PORTFOLIOS</a></li>
-            <li><a href="#">ABOUT ME</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#hero-section">HOME</a></li>
+            <li><a href="#portfolio">PORTFOLIOS</a></li>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#contact">CONTACT</a></li>
 
             <li class="nav-icons-mini">
               <a href="#"
@@ -50,7 +56,11 @@
             </li>
 
             <li class="nav-qrcode">
+              <<<<<<< HEAD
               <img src="images/icon_login.svg" alt="qrcode" />
+              =======
+              <img src="images/icon_login.svg" alt="QR code" />
+              >>>>>>> main
             </li>
           </ul>
         </nav>
@@ -58,52 +68,70 @@
 
       <section id="hero-section" class="grid-con center-grid-con box">
         <h2 class="visually-hidden">Portfolio Site Hero Section</h2>
-        <div class="grid-con center-grid-con" id="hero"></div>
+        <div class="col-span-full m-col-start-4 m-col-end-10" id="hero">
+          <section id="player-container" class="col-span-2">
+            <video
+              id="player1"
+              controls
+              preload="metadata"
+              poster="images/placeholder.png"
+            >
+              <source src="video/video.mp4" type="video/mp4" />
+              <source src="video/video.webm" type="video/webm" />
+              <p>Your browser does not support HTML5 Video.</p>
+            </video>
+          </section>
+        </div>
       </section>
     </div>
 
     <main>
-      <div class="grid-con center-grid-con" id="portfolio">
-        <h2>PORTFOLIO</h2>
-        <section class="col-span-6 image-placeholder">
+      <section class="grid-con center-grid-con" id="portfolio">
+        <h2 class="col-span-full">PORTFOLIOS</h2>
+
+        <section class="col-span-full m-col-span-6 image-placeholder">
           <h3>Portfolio #1</h3>
           <p>
             This project rebrands the discontinued 90s juice brand "Squeezit"
             for today's consumers.
           </p>
         </section>
-        <section class="col-span-6 image-placeholder">
+
+        <section class="col-span-full m-col-span-6 image-placeholder">
           <h3>Portfolio #2</h3>
           <p>
             This project rebrands the discontinued 90s juice brand "Squeezit"
             for today's consumers.
           </p>
         </section>
-        <section class="col-span-6 image-placeholder">
+
+        <section class="col-span-full m-col-span-6 image-placeholder">
           <h3>Portfolio #3</h3>
           <p>
             This project rebrands the discontinued 90s juice brand "Squeezit"
             for today's consumers.
           </p>
         </section>
-        <section class="col-span-6 image-placeholder">
-          <h3>Portfolio #2</h3>
+
+        <section class="col-span-full m-col-span-6 image-placeholder">
+          <h3>Portfolio #4</h3>
           <p>
             This project rebrands the discontinued 90s juice brand "Squeezit"
             for today's consumers.
           </p>
         </section>
-      </div>
+      </section>
 
-      <div class="grid-con center-grid-con box">
-        <section class="col-span-12 image-placeholder">
-          <h2>ABOUT ME</h2>
-        </section>
-      </div>
+      <section class="grid-con center-grid-con box" id="about">
+        <h2 class="col-span-full">ABOUT ME</h2>
+        <div class="col-span-full image-placeholder"></div>
+      </section>
 
-      <div class="grid-con center-grid-con image-placeholderv">
-        <section class="l-col-satrt-3 l-col-end-10">
-          <h2 class="visually-hidden">CONTACT</h2>
+      <div class="grid-con center-grid-con" id="contact">
+        <section
+          class="col-span-full m-col-start-4 m-col-end-10 image-placeholder"
+        >
+          <h2 class="col-span-full">CONTACT</h2>
         </section>
       </div>
     </main>
@@ -114,6 +142,7 @@
       </p>
     </footer>
 
+    <script src="https://cdn.plyr.io/3.8.4/plyr.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
