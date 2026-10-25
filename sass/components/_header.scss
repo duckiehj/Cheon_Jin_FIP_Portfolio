@@ -1,1 +1,26 @@
 @use "../abstracts";
+
+#menu-toggle {
+  display: none;
+}
+
+#main-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.burger-icon {
+  display: block;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.burger-icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  transition: transform 0.3s ease;
+}
