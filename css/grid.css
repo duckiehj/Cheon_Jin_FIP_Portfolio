@@ -52,14 +52,13 @@ h5 {
 
 .image-placeholder {
   width: 100%;
-  background-color: #eee;
+  background-color: #faf8f5;
   border: 2px dashed #aaa;
   aspect-ratio: 16/9;
 }
 
 .box {
-  background-color: #f1cdcb;
-  color: #fff;
+  background-color: #f79f37;
   padding: 20px;
   text-align: center;
   margin-top: 10px;
