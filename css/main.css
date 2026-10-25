@@ -46,7 +46,7 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  width: 60%;
   background-color: #faf8f5;
   text-align: left;
   display: flex;
@@ -61,7 +61,7 @@ header {
 #menu-toggle:checked ~ #burger-menu {
   max-height: 450px;
   padding: 20px;
-  border-bottom: 2px solid #f27464;
+  border-bottom: 5px solid #f27464;
 }
 
 #burger-menu li a {
@@ -108,4 +108,12 @@ header {
     width: 44px;
     height: 44px;
   }
+}
+.top-section {
+  background-color: #faf8f5;
+}
+
+#hero video {
+  width: 100%;
+  display: block;
 }/*# sourceMappingURL=main.css.map */

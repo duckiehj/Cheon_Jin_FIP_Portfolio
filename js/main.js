@@ -1,14 +1,10 @@
-(() => {
-  console.log("JS is connected");
+console.log("JS is connected");
 
-  const menuToggle = document.querySelector("#menu-toggle");
-  const navLinks = document.querySelectorAll("#burger-menu a");
+const menu = document.querySelector("#menu-toggle");
+const links = document.querySelectorAll("#burger-menu a");
 
-  function closeMenu() {
-    menuToggle.checked = false;
-  }
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-})();
+links.forEach(function (link) {
+  link.onclick = function () {
+    menu.checked = false;
+  };
+});
