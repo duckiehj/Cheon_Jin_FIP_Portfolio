@@ -26,13 +26,133 @@ header {
   display: block;
   cursor: pointer;
   padding: 6px;
+
+  img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    transition: transform 0.3s ease;
+  }
 }
 
-.burger-icon img {
-  width: 32px;
-  height: 32px;
-  display: block;
-  transition: transform 0.3s ease;
+#burger-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  font-family: abstracts.$font-primary;
+  font-size: 20px;
+  width: auto;
+  padding: 10px 20px;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  background-color: transparent;
+  z-index: 10;
+
+  li a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: abstracts.$primary-color;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: aquas;
+    }
+  }
+}
+
+#menu-toggle:checked ~ #burger-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu-toggle:checked ~ .burger-icon img {
+  transform: rotate(90deg);
+}
+
+.nav-icons-mini {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.nav-qrcode {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #main-nav {
+    justify-content: flex-end;
+  }
+
+  // Hide burger button
+  .burger-icon {
+    display: none;
+  }
+
+  // Always show horizontal navigation
+  #burger-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    position: static;
+
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+
+    font-size: 12px;
+    text-align: center;
+
+    background-color: transparent;
+
+    li a {
+      padding: 0;
+      color: abstracts.$primary-color;
+      white-space: nowrap;
+
+      &:hover {
+        color: abstracts.$body-text-color;
+      }
+    }
+  }
+
+  .nav-icons-mini {
+    gap: 14px;
+    padding: 0;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .nav-qrcode {
+    display: block;
+
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 #burger-menu {
