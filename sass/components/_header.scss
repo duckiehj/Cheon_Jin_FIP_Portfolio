@@ -1,19 +1,30 @@
 @use "../abstracts";
 
 header {
-  position: relative;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
+  background-color: $bg-color;
+
+  .grid-con {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+#main-nav {
+  position: static;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #logo {
   width: 120px;
   display: block;
-}
-
-#menu-toggle {
-  display: none;
 }
 
 #main-nav {
@@ -22,53 +33,145 @@ header {
   align-items: center;
 }
 
-.burger-icon {
-  display: block;
-  cursor: pointer;
-  padding: 6px;
+#menu-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
 
-  img {
-    width: 32px;
-    height: 32px;
-    display: block;
-    transition: transform 0.3s ease;
+.burger-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.burger-lines {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 4px;
+  background-color: $primary-color;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primary-color;
+    border-radius: 20px;
+    transition:
+      top 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    top: 8px;
   }
 }
 
+#menu-toggle:checked + .burger-icon .burger-lines {
+  background-color: transparent;
+
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+#menu-toggle:focus-visible + .burger-icon {
+  outline: 2px solid $primary-color;
+  outline-offset: 4px;
+}
+
 #burger-menu {
-  display: none;
   position: absolute;
   top: 100%;
-  font-family: abstracts.$font-primary;
-  font-size: 20px;
-  width: auto;
-  padding: 10px 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
   margin: 0;
+  padding: 0 20px;
   list-style: none;
-  text-align: center;
-  background-color: transparent;
-  z-index: 10;
+  background-color: $bg-color;
+  font-family: $primary-font;
+  font-size: 16px;
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    visibility 0s linear 0.3s;
 
   li a {
-    display: block;
+    display: inline-block;
     padding: 12px 0;
+    position: relative;
     text-decoration: none;
-    color: abstracts.$primary-color;
-    transition: color 0.2s ease;
+    font-weight: 700;
+    color: $primary-color;
+    transition: color 0.3s ease;
 
-    &:hover {
-      color: aquas;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: $accent-color;
+      border-radius: 8px;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $accent-color;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      width: 100%;
+      animation: pulse11 1s;
+      box-shadow: 0 0 0 1em transparent;
     }
   }
 }
 
 #menu-toggle:checked ~ #burger-menu {
-  display: flex;
-  flex-direction: column;
-}
-
-#menu-toggle:checked ~ .burger-icon img {
-  transform: rotate(90deg);
+  max-height: 350px;
+  padding: 12px 20px 18px;
+  visibility: visible;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    visibility 0s;
 }
 
 .nav-icons-mini {
@@ -93,137 +196,35 @@ header {
   display: none;
 }
 
-@media (min-width: 768px) {
-  #main-nav {
-    justify-content: flex-end;
-  }
-
-  // Hide burger button
+@media screen and (min-width: 768px) {
+  #menu-toggle,
   .burger-icon {
     display: none;
   }
 
-  // Always show horizontal navigation
-  #burger-menu {
+  #burger-menu,
+  #menu-toggle:checked ~ #burger-menu {
+    position: static;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
-
-    position: static;
-
     width: auto;
+    max-width: 100%;
+    max-height: none;
     margin: 0;
     padding: 0;
-
+    gap: 25px;
     overflow: visible;
-
-    font-size: 12px;
-    text-align: center;
-
+    visibility: visible;
     background-color: transparent;
-
-    li a {
-      padding: 0;
-      color: abstracts.$primary-color;
-      white-space: nowrap;
-
-      &:hover {
-        color: abstracts.$body-text-color;
-      }
-    }
+    border: none;
+    font-size: 16px;
+    transition: none;
   }
 
-  .nav-icons-mini {
-    gap: 14px;
-    padding: 0;
-
-    img {
-      width: 22px;
-      height: 22px;
-    }
-  }
-
-  .nav-qrcode {
-    display: block;
-
-    img {
-      display: block;
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
-#burger-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0 20px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 60%;
-  background-color: abstracts.$bg-color;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.3s ease,
-    padding 0.3s ease;
-}
-
-#menu-toggle:checked ~ #burger-menu {
-  max-height: 450px;
-  padding: 20px;
-  border-bottom: 5px solid abstracts.$primary-color;
-}
-
-#burger-menu li a {
-  text-decoration: none;
-  color: abstracts.$primary-color;
-  font-weight: 600;
-}
-
-.nav-icons-mini {
-  display: flex;
-  gap: 12px;
-}
-
-.nav-icons-mini img {
-  width: 24px;
-  height: 24px;
-}
-
-.nav-qrcode img {
-  width: 60px;
-  height: 60px;
-}
-
-@media screen and (min-width: 768px) {
-  .burger-icon {
-    display: none;
-  }
-
-  #burger-menu {
-    position: static;
-    width: auto;
-    max-height: none;
-    overflow: visible;
-    padding: 0;
-    background: none;
-
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
-
-  #menu-toggle:checked ~ #burger-menu {
-    padding: 0;
-    border-bottom: none;
+  #burger-menu li a {
+    padding: 6px 0;
+    white-space: nowrap;
   }
 
   .nav-qrcode img {
