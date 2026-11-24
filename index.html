@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Site - Hee Jin Cheon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
-
-    <title>Portfolio Site - Hee Jin Cheon</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.8.4/plyr.css" />
     <link href="css/grid.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
@@ -36,9 +35,13 @@
           class="col-span-2 m-col-start-4 m-col-end-13 l-col-start-5 l-col-end-13"
         >
           <h2 class="visually-hidden">Main Navigation</h2>
-          <input type="checkbox" id="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            aria-label="Navigation menu"
+          />
           <label for="menu-toggle" class="burger-icon">
-            <img src="images/icon_burger.svg" alt="Hamburger Menu" />
+            <span class="burger-lines"></span>
           </label>
 
           <ul id="burger-menu">
